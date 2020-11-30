@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 let autoComplete;
+const API_KEY = 'AIzaSyBLVHqBpK4pTUHkxRLctTj6a3nHrt1d';
 
 const loadScript = (url, callback) => {
     let script = document.createElement("script");
@@ -113,7 +114,7 @@ const SearchLocationInput = ({ result})=> {
 
     useEffect(() => {
         loadScript(
-            `https://maps.googleapis.com/maps/api/js?key=AIzaSyBLVHqBpK4pTUHkxRLctTj6a3nHrt1d-uI&libraries=places`,
+            `https://maps.googleapis.com/maps/api/js?key=${API_KEY}-uI&libraries=places`,
             () => handleScriptLoad(setQuery, setMapState, autoCompleteRef)
         );
     }, []);
